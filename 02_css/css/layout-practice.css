@@ -1,0 +1,99 @@
+.box {
+  background-color: lightblue;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 40px;
+}
+
+.nav-menu {
+  padding: 15px;
+}
+
+.content-area {
+  display: flex;
+  height: 200px;
+}
+
+.content-area div:nth-child(1) {
+  flex-basis: 20%;
+  margin-right: 10px;
+}
+.content-area div:nth-child(2) {
+  flex-basis: 60%;
+}
+.content-area div:nth-child(3) {
+  flex-basis: 20%;
+  margin-left: 10px;
+}
+
+.footer {
+  padding: 20px 0;
+}
+
+/* ---------------------------------------------- */
+
+.container-2 .header {
+  height: 10vh;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 .nav {
+  height: 5vh;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 .main {
+  border: 1px solid red;
+  display: flex;
+  padding: 20px;
+}
+
+.container-2 .main div {
+  border: 1px solid blue;
+  height: 20vh;
+  width: 50%;
+}
+
+.container-2 .footer {
+  height: 10vh;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 section {
+  display: flex;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 .section {
+  padding: 10px;
+  width: 50%;
+  border: 1px solid rgb(56, 199, 0);
+}
+.container-2 .section div {
+  height: 10vh;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 .aside {
+  width: 50%;
+}
+
+.container-2 .figure {
+  height: 20vh;
+  padding: 10px;
+}
+
+.container-2 .figure .img {
+  height: 10vh;
+  border: 1px solid rgb(56, 199, 0);
+}
+
+.container-2 .figure .figcaption {
+  height: 10vh;
+  border: 1px solid rgb(56, 199, 0);
+}
