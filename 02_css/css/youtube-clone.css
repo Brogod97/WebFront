@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --hover-grey: #e5e5e5;
+  --input-border: #d8d8d8;
+  --search-button: #f8f8f8;
+  --subscribe-button: #0f0f0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* icon-size */
+#menu-icon,
+#remove-icon,
+#voice-icon,
+#video-icon,
+#notification-icon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+#youtube-logo {
+  height: 20px;
+}
+
+#keyboard-icon {
+  width: 27px;
+  height: 24px;
+
+  position: absolute;
+  top: 8px;
+  right: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-icon-button {
+  width: 64px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-icon-button > .search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#user-profile {
+  width: 60px;
+  height: 34px;
+}
+
+#user-profile > img {
+  width: 32px;
+  height: 32px;
+}
+
+/* header */
+.header {
+  display: flex;
+  height: 56px;
+  padding: 0 16px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.header-left {
+  flex-basis: 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-left > #menu-icon {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#menu-icon:hover,
+#voice-icon:hover,
+#video-icon:hover,
+#notification-icon:hover {
+  background-color: var(--hover-grey);
+  border-radius: 50%;
+}
+
+.header-left > #youtube-logo {
+  height: 56px;
+  padding: 18px 14px 18px 16px;
+}
+
+.header-center {
+  flex-basis: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-center > .search-area {
+  display: flex;
+}
+
+.header-center > .search-area > form {
+  display: flex;
+}
+
+.header-center > .search-area > form > fieldset {
+  padding: 0px 4px 0px 16px;
+  margin: 0 0 0 32px;
+  border: 1px solid var(--input-border);
+  border-radius: 40px 0 0 40px;
+  width: 540px;
+
+  display: flex;
+
+  position: relative;
+}
+
+.header-center > .search-area > form > fieldset > input {
+  border: none;
+  outline: 0;
+  font-size: 16px;
+}
+
+.header-center > .search-area > form > button {
+  border: 1px solid var(--input-border);
+  border-radius: 0 40px 40px 0;
+  background-color: var(--search-button);
+  cursor: pointer;
+  height: 40px;
+  width: 64px;
+  margin: 0;
+  padding: 1px 6px;
+}
+
+.header-center > .search-area > #voice-icon {
+  margin-left: 10px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 50%;
+}
+
+.header-right {
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-profile {
+  border: 0;
+  background-color: transparent;
+
+  width: 60px;
+  height: 34px;
+}
+
+#user-profile > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* content 영역 */
+.content {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.content > .main-content {
+  flex-basis: 60%;
+  margin-left: 24px;
+  padding: 24px 24px 0 0;
+}
+
+.content > .main-content > iframe {
+  width: 100%;
+  height: 70%;
+}
+
+.content > .main-content > .channel-info {
+  display: flex;
+}
+
+.content > .main-content > .channel-info > .container-1 {
+  flex-basis: 50%;
+
+  display: flex;
+  align-items: center;
+}
+
+.content > .main-content > .channel-info > .container-1 > .thumbnail {
+  width: 52px;
+}
+
+.content > .main-content > .channel-info > .container-1 > .thumbnail > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content > .main-content > .channel-info > .container-1 > .channel-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.content
+  > .main-content
+  > .channel-info
+  > .container-1
+  > .channel-data
+  > span:nth-child(2) {
+  font-size: 12px;
+  margin-top: 3px;
+
+  display: flex;
+}
+
+.content > .main-content > .channel-info > .container-1 > .subscribe {
+  color: white;
+  background-color: var(--subscribe-button);
+  border-radius: 40px;
+  width: 60px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.content > .main-content > .channel-info > .container-2 {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content > .main-content > .channel-info > .container-2 > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  background-color: var(--search-button);
+  width: 80px;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.content > .main-content > .channel-info > .container-2 > div:nth-child(1) {
+  border-radius: 20px 0 0 20px;
+  margin: 0;
+}
+
+.content > .main-content > .channel-info > .container-2 > div:nth-child(2) {
+  border-radius: 0 20px 20px 0;
+  margin: 0;
+  border-left: 1px solid var(--input-border);
+}
+
+.content > .main-content > .channel-info > .container-2 > div:nth-child(3) {
+  margin-left: 10px;
+}
+
+.content > .main-content > .video-info {
+  border-radius: 20px;
+  margin: 12px 12px 0 0;
+  padding: 8px 20px;
+  background-color: var(--search-button);
+}
+
+/* 추천 영상 섹션 */
+.content > .next-vid-list {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 24px 0 0;
+}
+
+.content > .next-vid-list > .filter {
+  display: flex;
+  align-items: center;
+}
+
+.content > .next-vid-list > .filter > .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  height: 32px;
+  margin: 8px 8px 8px 0;
+  padding: 0 12px;
+  background-color: var(--search-button);
+  font-size: 14px;
+}
+
+.content > .next-vid-list > .filter > .tag.selected {
+  background-color: var(--subscribe-button);
+  color: white;
+}
+
+.content > .next-vid-list > .vid-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.content > .next-vid-list > .vid-list > .vid {
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.content > .next-vid-list > .vid-list > .vid > img {
+  border-radius: 10px;
+  width: 168px;
+  height: 94px;
+}
+
+.content > .next-vid-list > .vid-list > .vid > span {
+  margin-left: 10px;
+}
