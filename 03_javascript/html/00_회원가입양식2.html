@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>00_회원가입양식2</title>
+  </head>
+  <body>
+    <form action="#" method="get" onsubmit="validate()">
+      <fieldset>
+        <legend>회원 가입 양식</legend>
+        <table>
+          <tr>
+            <td>아이디</td>
+            <td><input type="text" id="inputId" /></td>
+            <td><button type="button" id="idCheck">중복확인</button></td>
+          </tr>
+          <tr>
+            <td>비밀번호</td>
+            <td><input id="inputPw1" type="password" /></td>
+            <td><span id="pwCheck"></span></td>
+          </tr>
+          <tr>
+            <td>비밀번호확인</td>
+            <td><input id="inputPw2" type="password" /></td>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td><input id="inputName" type="text" /></td>
+            <td><span id="nameCheck"></span></td>
+          </tr>
+          <tr>
+            <td>성별</td>
+            <td>
+              <label for="male">남</label
+              ><input type="radio" id="male" name="gender" />
+              <label for="female">여</label
+              ><input type="radio" id="female" name="gender" />
+            </td>
+          </tr>
+          <tr>
+            <td>전화번호</td>
+            <td><input type="text" id="inputPhone" /></td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td><input type="email" /></td>
+          </tr>
+        </table>
+
+        <button>초기화</button>
+        <button>회원가입</button>
+      </fieldset>
+    </form>
+
+    <script>
+      // 1. 아이디 : 이벤트 (값이 변했을 때)
+      document
+        .getElementById("inputId")
+        .addEventListener("change", function () {
+          const regExp = /^[a-z]+[a-zA-Z0-9\-\_]{5,13}$/;
+
+          if (regExp.test(this.value)) {
+            inputId.style.backgroundColor = "springgreen";
+            inputId.style.color = "black";
+          } else {
+            inputId.style.backgroundColor = "red";
+            inputId.style.color = "white";
+          }
+        });
+
+      // 2. 비밀번호/ 비밀번호 확인 (키보드가 올라올 때)
+      document
+        .getElementById("inputPw2")
+        .addEventListener("keyup", function () {
+          const inputPw1 = document.getElementById("inputPw1");
+          const pwCheck = document.getElementById("pwCheck");
+          if (this.value == inputPw1.value) {
+            pwCheck.innerText = "비밀번호 일치";
+            pwCheck.style.color = "green";
+          } else {
+            pwCheck.innerText = "비밀번호 불일치";
+            pwCheck.style.color = "red";
+          }
+        });
+
+      // 3. 이름 (값이 변했을 때)
+      document
+        .getElementById("inputName")
+        .addEventListener("change", function () {
+          const regExp = /[가-힣]{2,5}/;
+          const nameCheck = document.getElementById("nameCheck");
+
+          if (regExp.test(this.value)) {
+            nameCheck.innerText = "정상입력";
+            nameCheck.style.color = "green";
+          } else {
+            nameCheck.innerText = "한글만 입력하세요";
+            nameCheck.style.color = "red";
+          }
+        });
+
+      // 4. 회원가입 버튼 클릭 시 : validate() 함수를 호출
+      function validate() {
+        if (!male.checked && !female.checked) {
+          return alert("성별을 선택해주세요.");
+        }
+
+        const regExp = /^0[012]{1,2}-+[0-9]{3,4}-+[0-9]{4}$/;
+        const inputPhone = document.getElementById("inputPhone");
+
+        if (!regExp.test(inputPhone.value)) {
+          return alert("전화번호의 형식이 올바르지 않습니다");
+        }
+      }
+    </script>
+  </body>
+</html>
