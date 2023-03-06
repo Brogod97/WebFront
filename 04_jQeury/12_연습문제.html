@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>colorBox</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      input {
+        width: 100px;
+      }
+
+      .boxes {
+        display: flex;
+      }
+
+      .colorBox {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        transition-duration: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxes">
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+      </div>
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+      </div>
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+      </div>
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+      </div>
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+      </div>
+      <div>
+        <div class="colorBox"></div>
+        <input type="text" />
+        <button id="reset" type="button">리셋</button>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        $("input").on("input", function () {
+          $(this).prev().css("backgroundColor", $(this).val());
+          $(this).css({
+            border: "1px solid " + $(this).val(),
+            color: $(this).val(),
+          });
+        });
+
+        $("#reset").on("click", function () {
+          $(".colorBox").css("backgroundColor", "");
+          $("input")
+            .css({
+              border: "",
+              color: "",
+            })
+            .val("");
+        });
+      });
+    </script>
+  </body>
+</html>
